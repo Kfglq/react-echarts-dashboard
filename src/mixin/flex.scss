@@ -1,0 +1,41 @@
+// src/mixin/flex.scss
+
+.flex{
+  display: flex;
+}
+
+.flex-XYcenter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-Xcenter{
+  display: flex;
+  justify-content: center;
+}
+
+.flex-Ycenter{
+  display: flex;
+  align-items: center;
+}
+
+.flex-SpaceBetween{
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-SpaceAround{
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-SpaceEvenly{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.flex-direction{
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,34 @@
+// src/mixin/shadow.scss
+
+@mixin shadow-1($shadow-color: #000) {
+  box-shadow: 
+    0 1px 2px -2px rgba($shadow-color, 0.16), 
+    0 3px 6px 0px rgba($shadow-color, 0.12), 
+    0 5px 12px 4px rgba($shadow-color, 0.09);
+}
+
+@mixin shadow-2($shadow-color: #000) {
+  box-shadow: 
+    0 3px 6px -4px rgba($shadow-color, 0.12), 
+    0 6px 16px 0px rgba($shadow-color, 0.08), 
+    0 9px 28px 8px rgba($shadow-color, 0.05);
+}
+
+@mixin shadow-3($shadow-color: #000) {
+  box-shadow: 
+    0 6px 16px -8px rgba($shadow-color, 0.08), 
+    0 9px 28px 0px rgba($shadow-color, 0.05), 
+    0 12px 48px 16px rgba($shadow-color, 0.03);
+}
+
+@mixin shadow-around($glow-color: var(--ant-color-primary), $p1-t: 70%, $p2-t: 85%) {
+  box-shadow: 
+    0 0 15px 2px color-mix(in srgb, $glow-color, transparent $p1-t), 
+    0 10px 30px -5px color-mix(in srgb, $glow-color, transparent $p2-t);
+}
+
+@mixin shadow-around-strong($glow-color: var(--ant-color-primary), $p1-t: 50%, $p2-t: 75%) {
+  box-shadow: 
+    0 0 25px 5px color-mix(in srgb, $glow-color, transparent $p1-t), 
+    0 15px 45px -5px color-mix(in srgb, $glow-color, transparent $p2-t);
+}

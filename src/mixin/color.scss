@@ -1,0 +1,22 @@
+// src/mixin/color.scss
+
+$Primary-Color: #666;
+$Secondary-Color: #666;
+
+// Primary 相關 mixins
+.font-primary {
+  color: var(--ant-color-primary, #{$Primary-Color});
+}
+
+.bg-primary {
+  background-color: var(--ant-color-primary, #{$Primary-Color});
+}
+
+// Secondary 相關 mixins
+.font-secondary {
+  color: var(--ant-color-secondary, #{$Secondary-Color});
+}
+
+.bg-secondary {
+  background-color: var(--ant-color-secondary, #{$Secondary-Color});
+}

@@ -1,0 +1,32 @@
+// src/mixin/font.scss
+
+@mixin generate-font-size-system() {
+  $property: font-size;
+  $prefix: 'fs';
+    
+  @for $i from 0 through 100 {
+    $value: $i * 2;
+    
+    .#{$prefix}-#{$value} {
+      #{$property}: #{$value}px;
+    }
+  }
+}
+
+@include generate-font-size-system();
+
+@mixin generate-font-weight-system() {
+  $property: font-weight;
+  $prefix: 'fw';
+    
+  @for $i from 1 through 9 {
+    $value: $i * 100;
+    
+    .#{$prefix}-#{$value} {
+      #{$property}: #{$value};
+    }
+  }
+}
+
+@include generate-font-weight-system();
+

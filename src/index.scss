@@ -1,0 +1,92 @@
+/* src/index.scss */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans TC", sans-serif !important;
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(239, 239, 239);
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #bfbfbf;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #333;
+  }
+  ::-webkit-scrollbar-corner {
+    background: #179a16;
+  }
+}
+
+#root,
+html,
+body {
+  height: 100%;
+}
+
+.ant-card .ant-card-head-title {
+  // color: var(--ant-color-primary);
+}
+
+.ant-spin-nested-loading, .ant-spin-container {
+  @extend .hw-100;
+}
+
+.top-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--ant-color-primary);
+  box-shadow: 0 0 8px rgba(22, 119, 255, 0.6);
+  border-radius: 3px;
+  opacity: 0;
+  z-index: 100;
+  pointer-events: none;
+  transition: width 0.4s ease, opacity 0.4s ease, background 0.3s ease, box-shadow 0.3s ease;
+
+  &.loading {
+    opacity: 1;
+    animation: fake-progress 15s cubic-bezier(0.1, 0.5, 0.1, 1) forwards;
+  }
+
+  &.finished {
+    width: 100% !important;
+    opacity: 1;
+    animation: fade-out 0.4s forwards 0.3s;
+  }
+
+  &.error {
+    background: #ff4d4f !important;
+    box-shadow: 0 0 12px rgba(255, 77, 79, 0.8) !important;
+    width: 100% !important;
+    opacity: 1;
+    animation: none;
+
+    &.finished {
+      animation: fade-out 0.4s forwards 1.5s; 
+    }
+  }
+}
+
+@keyframes fake-progress {
+  0% { width: 0%; }
+  5% { width: 20%; }
+  20% { width: 50%; }
+  50% { width: 75%; }
+  100% { width: 98%; }
+}

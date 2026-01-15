@@ -1,0 +1,65 @@
+// src/layouts/Layout.scss
+
+#Layout {
+  overflow: hidden;
+  @extend .v-100;
+
+  .ant-layout, .ant-app {
+    @extend .hw-100;
+  }
+
+  .ant-layout-header {
+    height: 60px;
+    position: relative;
+    @include shadow-1(#aaa);
+    @extend .p-0;
+    @extend .flex-XYcenter;
+
+    .ant-menu {
+      border-bottom: none;
+      @extend .h-100;
+      @extend .flex-Ycenter;
+      .logout-btn {
+        margin-left: auto;
+      }
+    }
+
+    &.is-mobile {
+      @extend .flex-Xcenter;
+
+      .hamburger-btn {
+        position: absolute;
+        left: 10px;
+        @extend .fs-20;
+      }
+
+      .logo {
+        height: 20px;
+      }
+    }
+  }
+
+  .ant-layout-content {
+    position: relative;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    @extend .p-20;
+
+    @media (max-width: 768px) {
+      padding: 10px !important;
+    }
+  }
+
+  .ant-layout-footer {
+    height: 20px;
+    color: #AAA;
+    text-align: center;
+    @extend .p-0;
+    @extend .fw-500;
+    @extend .fs-12;
+  }
+
+  .top-progress-bar {
+    top: 60px !important;
+  }
+}

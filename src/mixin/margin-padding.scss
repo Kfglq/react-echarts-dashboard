@@ -1,0 +1,51 @@
+// src/mixin/margin-padding.scss
+
+@mixin generate-spacing-system() {
+  // 定義要生成的屬性類型
+  $properties: (margin, padding);
+  $prefixes: (margin: 'm', padding: 'p');
+  
+  @each $property in $properties {
+    $prefix: map-get($prefixes, $property);
+    
+    @for $i from 0 through 100 {
+      $value: $i * 2;
+      
+      // 全方向
+      .#{$prefix}-#{$value} {
+        #{$property}: #{$value}px;
+      }
+      
+      // 垂直方向
+      .#{$prefix}y-#{$value} {
+        #{$property}-top: #{$value}px;
+        #{$property}-bottom: #{$value}px;
+      }
+      
+      // 水平方向
+      .#{$prefix}x-#{$value} {
+        #{$property}-left: #{$value}px;
+        #{$property}-right: #{$value}px;
+      }
+      
+      // 單方向
+      .#{$prefix}t-#{$value} {
+        #{$property}-top: #{$value}px;
+      }
+      
+      .#{$prefix}r-#{$value} {
+        #{$property}-right: #{$value}px;
+      }
+      
+      .#{$prefix}b-#{$value} {
+        #{$property}-bottom: #{$value}px;
+      }
+      
+      .#{$prefix}l-#{$value} {
+        #{$property}-left: #{$value}px;
+      }
+    }
+  }
+}
+
+@include generate-spacing-system();

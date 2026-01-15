@@ -1,0 +1,42 @@
+// src/mixin/glass-highlight.scss
+
+@mixin glass-highlight {
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 200%;
+    z-index: 1;
+
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    
+    transform: skewX(-20deg) translateX(-200%);
+    
+    pointer-events: none;
+    animation: shine-pass 5s infinite linear; 
+  }
+}
+
+@keyframes shine-pass {
+  0% {
+    transform: skewX(-20deg) translateX(-200%);
+  }
+  20% {
+    transform: skewX(-20deg) translateX(200%);
+  } 
+  21% {
+    transform: skewX(-20deg) translateX(200%);
+  }
+  100% {
+    transform: skewX(-20deg) translateX(200%);
+  }
+}
