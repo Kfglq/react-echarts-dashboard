@@ -6,7 +6,7 @@ import _ from "lodash";
 
 // import type { RootState } from "@/store";
 import { selectPersonNames } from '@/selectors/DashboardSelector';
-import type { DashboardPayload } from "@/types/Dashboard";
+// import type { DashboardPayload } from "@/types/Dashboard";
 import ChartCard from '@/components/ChartCard';
 import "./Dashboard.scss";
 
@@ -15,8 +15,8 @@ const Dashboard: React.FC = (): JSX.Element => {
   const personNames = useSelector(selectPersonNames);
 
   useEffect((): void =>{
-    const payload: DashboardPayload = { startDate: "2026-01-01", endDate: "2026-01-31" };
-    dispatch({type:"Dashboard_Data", payload});
+    // const payload: DashboardPayload = { startDate: "2026-01-01", endDate: "2026-01-31" };
+    dispatch({type:"Dashboard_Data"});
   },[dispatch]);
 
   return(

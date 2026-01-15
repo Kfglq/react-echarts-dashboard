@@ -23,9 +23,9 @@ import moment from "moment";
 
 import { actions } from "@/reducers/Dashboard";
 import { getDashboardList } from "@/selectors/DashboardSelector";
-import type { DashboardPayload, DetailType } from "@/types/Dashboard";
+import type { DetailType } from "@/types/Dashboard";
 
-function* Dashboard_DataEffect({ _payload }: { _payload: DashboardPayload; type: string }): SagaIterator {
+function* Dashboard_DataEffect(): SagaIterator {
   let tick = 0;
   while (true) {
     const currentList = (yield select(getDashboardList)) as DetailType[];
